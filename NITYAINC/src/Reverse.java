@@ -2,6 +2,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reverse {
+	
+	
+	public String reverseString(String str){
+		
+		char[] temp=new char[str.length()];
+		
+		for(int i=0;i<str.length();i++) {
+			
+			temp[i]=str.charAt(str.length()-i-1);
+		}
+		
+		String reverse=new String(temp);
+		return reverse+";";
+		
+		
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -12,21 +28,9 @@ public class Reverse {
 		String userInput=sc.nextLine();
 		
 	
+		Reverse rv=new Reverse();
 		
-		ArrayList<Character> str=new ArrayList<>();
-
-		for(int i=userInput.length()-1;i>=0;i--) {
-			
-			str.add(userInput.charAt(i));
-			
-
-		}
-		
-		str.add(str.size(), ';');
-		System.out.print(userInput+"=");
-		
-	
-		str.forEach(i->System.out.print(i));
+		System.out.println(userInput+"="+rv.reverseString(userInput));
 		
 		
 		
